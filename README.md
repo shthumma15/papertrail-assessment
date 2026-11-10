@@ -29,7 +29,7 @@ python -m unittest discover -s tests -v
 
 ## Deployment
 
-The app listens on `0.0.0.0:$PORT`, so it can run on a Python web host that supports a persistent writable disk. Configure the start command as `python server.py` and mount persistent storage for `DOCS_DATA` (for example, `/var/data/documents.json`). A host with ephemeral storage will lose data when its instance is replaced. The assessment asks for a live product URL; this source bundle does not include a deployed URL.
+The app listens on `0.0.0.0:$PORT`, so it can run on a Python web host that supports a persistent writable disk. Configure the start command as `python server.py` and mount persistent storage for `DOCS_DATA` (for example, `/var/data/documents.json`). A host with ephemeral storage will lose data when its instance is replaced. The assessment asks for a live product URL; https://papertrail-assessment.onrender.com/
 
 ## Scope and limitations
 
