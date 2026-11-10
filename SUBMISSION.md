@@ -8,4 +8,4 @@
 - `AI_WORKFLOW.md` — AI assistance and verification note
 - `data/documents.json` — created at runtime; not required in the source bundle
 - Live product URL — (https://papertrail-assessment.onrender.com/)
-- Walkthrough video URL — (https://drive.google.com/drive/folders/1CbLQn9P8tBnD6ZKGpnWac1feOYv01aff?usp=drive_link)
+- Walkthrough video URL — https://drive.google.com/file/d/1mQosgaUtlMBm4DvXPPGuzmd8-nDI0cEy/view?usp=drive_link
