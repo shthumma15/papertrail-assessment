@@ -7,5 +7,5 @@
 - `ARCHITECTURE.md` — data model, design choices, and deferred work
 - `AI_WORKFLOW.md` — AI assistance and verification note
 - `data/documents.json` — created at runtime; not required in the source bundle
-- Live product URL — not yet deployed
+- Live product URL — (https://papertrail-assessment.onrender.com/)
 - Walkthrough video URL — not yet recorded
