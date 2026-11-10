@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f6f2"><title>Papertrail — a calmer place to write</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#" aria-label="Papertrail home"><span class="brand-mark">p</span><span>papertrail</span></a>
+      <div class="workspace-label">YOUR WORKSPACE</div>
+      <label class="account-picker"><span class="avatar" id="avatar">A</span><select id="account" aria-label="Switch demo account"></select><span class="chevron">⌄</span></label>
+      <button id="newDoc" class="new-doc"><span>＋</span> New document <kbd>⌘ K</kbd></button>
+      <nav class="nav-tabs" aria-label="Document views"><button class="nav-tab active" data-view="owned"><span>▤</span> My documents <span id="ownedCount" class="count">0</span></button><button class="nav-tab" data-view="shared"><span>↗</span> Shared with me <span id="sharedCount" class="count">0</span></button></nav>
+      <div class="doc-list-heading"><span id="listHeading">RECENT DOCUMENTS</span><button id="refresh" title="Refresh list" aria-label="Refresh list">↻</button></div>
+      <div id="docList" class="doc-list"></div>
+      <div class="sidebar-bottom"><div class="storage-note"><span class="status-dot"></span> Saved to this workspace</div><div class="profile"><div class="avatar avatar-small" id="profileAvatar">A</div><div><b id="profileName">Alex Morgan</b><small>Personal workspace</small></div></div></div>
+    </aside>
+    <main class="main">
+      <header class="topbar"><div class="breadcrumbs"><button id="workspaceCrumb" class="workspace-crumb" title="Back to workspace">My workspace</button><span class="crumb-slash">/</span><span id="crumbTitle">Welcome</span><span id="saveState" class="save-state"></span></div><div class="top-actions"><button class="icon-button" id="shareBtn" title="Share document" disabled>↗</button><button class="share-button" id="shareText" disabled>Share <span>⌄</span></button><div class="user-chip"><span class="avatar avatar-mini" id="topAvatar">A</span><span id="topName">Alex</span></div></div></header>
+      <section id="welcome" class="welcome-view">
+        <div class="welcome-kicker"><span class="spark">✳</span> YOUR SPACE TO THINK</div>
+        <h1>Good ideas deserve<br>a <em>place to land.</em></h1>
+        <p class="welcome-copy">A quiet, focused space for the work you’re making together.</p>
+        <div class="welcome-actions"><button class="primary-button" id="welcomeNew">＋ &nbsp;Start a document</button><label class="secondary-button upload-label">↑ &nbsp;Import a file<input type="file" id="fileInput" accept=".txt,.md,text/plain,text/markdown"></label></div>
+        <div class="recent-section"><div class="section-title"><span>Pick up where you left off</span><span class="section-rule"></span></div><div id="recentCards" class="recent-cards"></div></div>
+        <div class="welcome-foot"><span>Documents stay private until you share them.</span><span>Import supported: .txt and .md</span></div>
+      </section>
+      <section id="editorView" class="editor-view hidden">
+        <div class="editor-wrap">
+          <div class="editor-meta"><span id="docType" class="doc-type">DOCUMENT</span><span class="meta-sep">·</span><span id="updatedLabel">Just now</span><span id="readOnlyBadge" class="read-only hidden">VIEW ONLY</span></div>
+          <input id="titleInput" class="title-input" maxlength="120" aria-label="Document title" placeholder="Untitled document">
+          <div class="format-bar" role="toolbar" aria-label="Text formatting">
+            <button data-command="bold" title="Bold (Ctrl+B)"><b>B</b></button><button data-command="italic" title="Italic (Ctrl+I)"><i>I</i></button><button data-command="underline" title="Underline (Ctrl+U)"><u>U</u></button><span class="toolbar-separator"></span>
+            <select id="blockStyle" aria-label="Text style"><option value="p">Normal text</option><option value="h1">Heading 1</option><option value="h2">Heading 2</option><option value="h3">Heading 3</option></select><span class="toolbar-separator"></span>
+            <button data-command="insertUnorderedList" title="Bulleted list">☷</button><button data-command="insertOrderedList" title="Numbered list">1.</button><button data-command="formatBlock" data-value="blockquote" title="Quote">❝</button><span class="toolbar-spacer"></span><button id="editorUpload" class="import-inline" title="Import text or Markdown">↑ <span>Import</span></button>
+          </div>
+          <div id="editor" class="editor" contenteditable="true" role="textbox" aria-label="Document content" aria-multiline="true" spellcheck="true"><p></p></div>
+          <div class="editor-bottom"><span><span class="status-dot"></span> <span id="saveFooter">All changes saved</span></span><span id="wordCount">0 words</span></div>
+        </div>
+      </section>
+      <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    </main>
+  </div>
+  <dialog id="shareDialog" class="modal"><form method="dialog" class="modal-inner"><button class="modal-close" aria-label="Close">×</button><div class="modal-eyebrow">COLLABORATE</div><h2>Share this document</h2><p class="modal-copy">Invite a teammate to read this document.</p><div class="share-field"><select id="shareUser" aria-label="Choose a teammate"></select><button id="grantAccess" type="button" class="primary-button">Invite</button></div><div class="access-heading">People with access</div><div id="accessList" class="access-list"></div><div class="share-note">Demo access is simulated with seeded accounts. Shared documents are read-only.</div></form></dialog>
+  <input type="file" id="editorFileInput" accept=".txt,.md,text/plain,text/markdown" hidden>
+  <script src="/app.js"></script>
+</body></html>
